@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.example36" parent="Theme.Material3.DayNight">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">#FFF8F8</item>
+    </style>
+</resources>
