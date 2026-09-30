@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:contentDescription="고양이 이미지"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat1" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="36dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="다음보기"
+        android:focusableInTouchMode="true"
+        android:onClick="onButtonClick"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/states" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
