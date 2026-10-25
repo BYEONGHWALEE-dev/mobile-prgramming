@@ -32,3 +32,21 @@ Android Studio에서 이 폴더를 열면 됩니다. 예제마다 프로젝트�
 - `res/drawable/button2.png`: 선택된 상태
 - `res/drawable/button3.png`: 누른 상태
 - `res/drawable/states.xml`: 상태에 따라 위 이미지를 고르는 selector
+
+# 8주차 실습: 액티비티 전환 다루기
+
+교수님 예제 저장소 [tommyjade4ssu/mp2602](https://github.com/tommyjade4ssu/mp2602)의 `mp0601`~`mp0605`를 가져와 TODO를 채웠습니다. 실행 방법은 5주차와 같고, 실행 구성에서 `example61`~`example65`를 고르면 됩니다.
+
+Kotlin 코드는 `src/main/java/com/ssu/week08/` 아래에 있습니다.
+
+| 모듈 | 예제 | 확인할 내용 |
+| --- | --- | --- |
+| `example61` | 6-1 명시적 인텐트로 스플래시 화면 만들기 | 스플래시 화면이 2초 뒤 `LoginActivity`로 넘어갑니다. 아이디·비밀번호를 넣고 `로그인`을 누르면 토스트로 입력값이 나옵니다. `LoginActivity.kt`는 원본에 없어 새로 작성했습니다. |
+| `example62` | 6-2 명시적 인텐트로 틀린 그림 찾기 퀴즈 | 고양이/강아지를 고르고 `시작하기`를 누르면 `putExtra("image", 1 or 2)`로 선택이 넘어갑니다. 틀린 곳을 누르면 `맞았습니다`, 5개를 다 찾으면 `5개 모두 선택했습니다.`가 나옵니다. |
+| `example63` | 6-3 명시적 인텐트로 모양 퀴즈 | CIRCLE/SQUARE를 고르고 그림을 3개까지 체크한 뒤 `결과보기`를 누르면, `registerForActivityResult`로 선택 배열(`"result"`)을 돌려받아 첫 화면에 그림과 정답 여부를 보여 줍니다. |
+| `example64` | 6-4 암시적 인텐트로 웹 페이지 이동 | URL을 넣고 `웹페이지보기`를 누르면 `ACTION_VIEW` 인텐트로 브라우저가 열립니다. `https://www.naver.com`처럼 `https://`까지 입력해야 합니다. |
+| `example65` | 6-5 인텐트 필터로 이메일 보내기 | 받는 사람·제목·내용을 넣고 `메일보내기`를 누르면 앱 선택 창이 뜨고, 메일 앱에 값이 채워집니다. 에뮬레이터에서는 Gmail 계정 로그인이 필요합니다. |
+
+## 예제 6-5 Manifest 수정
+
+원본은 LAUNCHER 필터 안에 `<category android:name="android.intent.action.SEND"/>`가 들어 있었습니다. `SEND`는 action이고, LAUNCHER 필터에 `data`가 섞이면 런처 인텐트와도 맞지 않아 필터를 둘로 나눴습니다. 그래서 앱 선택 창에 `example65` 자신도 함께 보입니다.
