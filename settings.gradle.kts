@@ -20,5 +20,10 @@ include(
     ":example33",
     ":example34",
     ":example35",
-    ":example36"
+    ":example36",
+    ":example61",
+    ":example62",
+    ":example63",
+    ":example64",
+    ":example65"
 )
