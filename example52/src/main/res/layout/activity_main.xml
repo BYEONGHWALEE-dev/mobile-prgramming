@@ -119,7 +119,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#00BCD4"
-        android:onClick="onClickChoice"
         android:text="결과보기"
         android:textSize="24sp"
         android:textStyle="bold"	/>
