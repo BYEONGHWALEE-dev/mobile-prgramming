@@ -72,8 +72,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (partB == 0) partB = 1
                 if (partA < partB) {
                     val swap = partA
-                    partB = partA
-                    partA = swap
+                    partA = partB
+                    partB = swap
                 }
                 result = partA % partB
                 ivObjOp.setImageResource(R.drawable.op4)
