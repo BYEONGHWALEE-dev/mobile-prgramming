@@ -50,3 +50,26 @@ Kotlin 코드는 `src/main/java/com/ssu/week08/` 아래에 있습니다.
 ## 예제 6-5 Manifest 수정
 
 원본은 LAUNCHER 필터 안에 `<category android:name="android.intent.action.SEND"/>`가 들어 있었습니다. `SEND`는 action이고, LAUNCHER 필터에 `data`가 섞이면 런처 인텐트와도 맞지 않아 필터를 둘로 나눴습니다. 그래서 앱 선택 창에 `example65` 자신도 함께 보입니다.
+
+# 9주차 실습: 메뉴와 앱 바 다루기
+
+교수님 예제 저장소 [tommyjade4ssu/mp2602](https://github.com/tommyjade4ssu/mp2602)의 `develop` 브랜치에 있는 `mp0701`~`mp0705`를 가져왔습니다. 실행 방법은 5주차와 같고, 실행 구성에서 `example71`~`example75`를 고르면 됩니다.
+
+Kotlin 코드는 `src/main/java/com/ssu/week09/` 아래에 있습니다.
+
+| 모듈 | 예제 | 확인할 내용 |
+| --- | --- | --- |
+| `example71` | 7-1 옵션 메뉴 | 액션바 오른쪽 `⋮`에서 더하기·빼기·곱하기·나머지구하기를 고르면 새 문제가 나옵니다. 가려진 숫자를 보기 버튼 3개 중에서 고르면 `맞았습니다/틀렸습니다` 토스트가 뜹니다. |
+| `example72` | 7-2 컨텍스트 메뉴 | 고양이·강아지 사이의 부등호 이미지를 길게 누르면 크다·작다·같다 메뉴가 뜨고, 고른 부등호로 바뀌며 정답 여부가 토스트로 나옵니다. |
+| `example73` | 7-3 팝업 메뉴 | 버튼을 누르면 오름차순·내림차순 팝업 메뉴가 뜨고, 고른 순서로 그림 6개가 다시 정렬됩니다. |
+| `example74` | 7-4 액션바 | 화면의 `찬성`/`반대` 버튼을 누르면 액션바 아이콘 옆 숫자가 오릅니다. `⋮`의 `초기화`는 숫자를 0으로, `종료`는 앱을 닫습니다. |
+| `example75` | 7-5 툴바 | 과일 수식의 답을 넣고 `결과보기`를 누르면 정답 여부 토스트와 함께 툴바의 정답/오답 수가 오릅니다. `다시 시작하기`는 새 문제를 냅니다. |
+
+## 교수님 코드와 다른 점
+
+- 7-1: 나머지 연산에서 `partA < partB`일 때 두 수를 맞바꾸는 코드가 `partB = partA`로 되어 있어 결과가 항상 0이었습니다. `partA = partB; partB = swap`으로 고쳤습니다.
+- 7-3: `PopupMenu(applicationContext, button)`을 `PopupMenu(this, button)`으로 바꿔 팝업이 액티비티 테마를 따르게 했습니다.
+- 7-4: 원본 테마가 `NoActionBar`라 액션바가 없어 `onCreateOptionsMenu`가 불리지 않고, `찬성` 버튼을 누르면 `lateinit` 변수 때문에 앱이 종료됐습니다. 7-1과 같은 `Theme.MaterialComponents.DayNight.DarkActionBar`로 바꿨습니다.
+- 7-4: 강의 자료에는 찬성 레이아웃이 `yes_layout.xml`로 나오지만, 원본 코드대로 `ok_layout.xml`을 씁니다. (7-5는 `yes_layout.xml`)
+- 7-5: 정답 입력칸을 `inputType="numberSigned"`로 바꾸고(답이 음수일 수 있음), `toInt()` 대신 `toIntOrNull()`로 숫자가 아닌 입력에서 앱이 종료되지 않게 했습니다.
+- 공통: targetSdk 35에서는 화면이 상태바 아래까지 그려집니다(edge-to-edge). 교수님 코드의 `WindowInsets` 패딩 처리를 그대로 두었고, 액션바·상태바와 겹치지 않는지는 기기에서 확인이 필요합니다.
