@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
 
         sObj1.setOnCheckedChangeListener{	buttonView,	isChecked->
             if	(isChecked)
-                ivObj1.visibility = View.INVISIBLE
-            else
                 ivObj1.visibility = View.VISIBLE
+            else
+                ivObj1.visibility = View.INVISIBLE
         }
         sObj2.setOnCheckedChangeListener{	buttonView,		isChecked->
             if	(isChecked)	{
