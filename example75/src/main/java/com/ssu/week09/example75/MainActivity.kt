@@ -59,8 +59,11 @@ class MainActivity : AppCompatActivity() {
                 else result -= fruitCount[fruitImage[i+1]]
             }
             val answer = editText.text.toString()
+            // numberSigned여도 "-"만 입력하면 숫자가 아니므로 toInt() 대신 null로 걸러 낸다
+            val answerNum = answer.toIntOrNull()
             if (answer=="") Toast.makeText(applicationContext, "입력해주세요", Toast.LENGTH_SHORT).show()
-            else   if (answer.toInt()==result) {
+            else if (answerNum == null) Toast.makeText(applicationContext, "숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
+            else   if (answerNum==result) {
                 Toast.makeText(applicationContext, "맞았습니다", Toast.LENGTH_SHORT).show()
                 val num = (Integer.parseInt(m_OkCount.text.toString())+1)
                 m_OkCount.text =  num.toString()
