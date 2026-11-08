@@ -27,8 +27,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickResult(view: View?) {
-        val partA = txtEdit1.text.toString().toInt()
-        val partB = txtEdit2.text.toString().toInt()
+        // 빈칸이나 숫자가 아닌 입력에서 toInt()는 NumberFormatException으로 앱을 종료시킨다
+        val partA = txtEdit1.text.toString().toIntOrNull()
+        val partB = txtEdit2.text.toString().toIntOrNull()
+        if (partA == null || partB == null) {
+            Toast.makeText(applicationContext, "숫자를 입력하세요.", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         if (partA == 2 && partB == 5) Toast.makeText(applicationContext,"맞았습니다.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(applicationContext,"틀렸습니다.", Toast.LENGTH_SHORT).show()
