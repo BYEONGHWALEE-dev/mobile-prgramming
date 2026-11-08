@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.example74" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ActionBar</item>
+        <item name="android:statusBarColor">@color/statusBar</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

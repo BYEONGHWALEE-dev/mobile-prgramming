@@ -1,0 +1,5 @@
+<resources>
+    <color name="ic_launcher_background">#03A9F4</color>
+    <color name="ActionBar">#8ABEC4</color>
+    <color name="statusBar">#5BA5AD</color>
+</resources>
