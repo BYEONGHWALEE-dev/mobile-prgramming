@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         val button: TextView = findViewById(R.id.button)
         button.setOnClickListener {
             //팝업 메뉴 표시
-            val popupMenu: PopupMenu = PopupMenu(applicationContext, button)
+            val popupMenu: PopupMenu = PopupMenu(this, button)
             val inflater: MenuInflater = popupMenu.menuInflater
             inflater.inflate(R.menu.menu, popupMenu.menu)
             popupMenu.show()
