@@ -101,7 +101,7 @@ xmlns:tools="http://schemas.android.com/tools"
                     android:layout_gravity="center_vertical"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="text"	/>
+                    android:inputType="numberSigned"	/>
             </FrameLayout>
         </LinearLayout>
         <LinearLayout
