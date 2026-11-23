@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         ivAnswer = findViewById(R.id.answer)
         ivAmPm = findViewById(R.id.ampm)
         //질문 및 AM/PM 상태 무작위 선택
-        question = (Math.random() * 3).roundToInt()
+        question = (Math.random() * drawableQuestion.size).toInt()
         ampm = (Math.random() * 1).roundToInt()
         //질문 이미지 설정
         ivQestion.setImageResource(drawableQuestion[question])
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         val buttonStart: Button = findViewById(R.id.buttonStart)
         //Start 버튼 클릭 리스너 설정
         buttonStart.setOnClickListener {
-            question = (Math.random() * 3).roundToInt()
+            question = (Math.random() * drawableQuestion.size).toInt()
             ampm = (Math.random() * 1).roundToInt()
             ivQestion.setImageResource(drawableQuestion[question])
             if (ampm==0) {
