@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
             val dialog = builder.show()
             tvResult = dialogView.findViewById(R.id.tvResult)
             tvInput = dialogView.findViewById(R.id.tvIntput)
+            // 상태 변수는 액티비티에 남아 있어, 다시 열면 빈 화면인데 이전 계산이 이어지므로 비운다
+            ACClick(dialogView)
             val buttonclose: Button = dialogView.findViewById(R.id.buttonclose)
             //대화상자 닫기 버튼 클릭 리스너
             buttonclose.setOnClickListener {
