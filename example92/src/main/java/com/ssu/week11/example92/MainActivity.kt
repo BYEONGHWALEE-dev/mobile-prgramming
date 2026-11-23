@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         btModify.setOnClickListener {
             val count =  adapter.getCount()
             val checked= selectItemPos
-            Toast.makeText(this, "111 " + count +" "+checked, Toast.LENGTH_SHORT).show()
             if (checked >= 0 && count >0){
                 val alertDialog = AlertDialog.Builder(this)
                 val inflater: LayoutInflater = layoutInflater
