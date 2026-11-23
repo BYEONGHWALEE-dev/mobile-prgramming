@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, itemValue.name, Toast.LENGTH_SHORT).show()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
+                // 선택이 사라지는 경우(목록이 비는 경우)에도 마지막 이미지를 그대로 두면 되므로 할 일이 없다.
             }
         }
     }
