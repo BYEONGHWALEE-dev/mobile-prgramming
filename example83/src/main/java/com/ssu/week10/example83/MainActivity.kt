@@ -66,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         if(str.isNotEmpty()){
             str = str.substring(0, str.length - 1)
             tvResult.text = str
+            // 지운 뒤 화면 숫자와 계산에 쓰는 값이 어긋나지 않게 다시 읽는다
+            SecondNum = str.toDoubleOrNull() ?: 0.0
         }
     }
     //Clear(초기화) 버튼 클릭 시 동작하는 메서드
