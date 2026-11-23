@@ -54,7 +54,10 @@ class OrderAdapter(val context: Context, val fruit: ArrayList<Fruit>) :
         }
         //항목 삭제 버튼 클릭 이벤트
         holder.removeFruit.setOnClickListener {
-            fruit.removeAt(position)
+            // bind 시점의 position은 앞 행이 지워진 뒤 다시 그려지기 전까지 낡은 값이라 현재 위치를 다시 읽는다.
+            val pos = holder.bindingAdapterPosition
+            if (pos == RecyclerView.NO_POSITION) return@setOnClickListener
+            fruit.removeAt(pos)
             selectChangedListener.onSelectChanged(fruit)
             notifyDataSetChanged()
         }
