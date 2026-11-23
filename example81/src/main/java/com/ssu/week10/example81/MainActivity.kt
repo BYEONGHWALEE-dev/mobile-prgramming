@@ -68,6 +68,8 @@ class MainActivity : AppCompatActivity() {
             val alertDialog = AlertDialog.Builder(this)
             alertDialog.setIcon(R.drawable.icon_pizza)
             alertDialog.setTitle("주문할	피자를	선택하세요")
+            // 이전에 고르다 취소한 번호가 남으면 체크 표시(oldNum)와 다른 피자가 주문되므로 맞춰 둔다
+            selectNum = oldNum
             val itemListener = DialogInterface.OnClickListener { dialog, whitch ->
                 Toast.makeText(this, listItems[whitch], Toast.LENGTH_LONG).show()
                 selectNum = whitch
