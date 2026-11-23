@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                     else -> ResultNum = FirstNum / SecondNum
                 }
                 ResultNum = round(ResultNum * 1000000000) / 1000000000
-                if(FirstNum % 1.0 == 0.0)
+                if(ResultNum % 1.0 == 0.0)
                     tvInput.text = ResultNum.toLong().toString() + " "+ btn
                 else tvInput.text = ResultNum.toString() + " "+ btn
                 tvResultCheck = false
