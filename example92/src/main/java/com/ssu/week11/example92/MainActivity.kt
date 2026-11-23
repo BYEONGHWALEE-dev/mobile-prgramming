@@ -86,6 +86,11 @@ class MainActivity : AppCompatActivity() {
                 //수정 버튼 클릭 시
                 button_yes.setOnClickListener {
                     var weight: EditText = dialogView.findViewById(R.id.name)
+                    // 빈 값이면 "몸무게 kg"로 덮어써지므로 대화상자를 닫지 않고 다시 입력받는다.
+                    if (weight.text.isBlank()) {
+                        Toast.makeText(this, "몸무게를 입력하세요", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
                     dialog.dismiss()
                     if (checked > -1 && checked < count) {
                         var nameKor: String = catsList.get(checked).name
