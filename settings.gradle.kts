@@ -39,5 +39,9 @@ include(
     ":example72",
     ":example73",
     ":example74",
-    ":example75"
+    ":example75",
+    ":example91",
+    ":example92",
+    ":example93",
+    ":example94"
 )
