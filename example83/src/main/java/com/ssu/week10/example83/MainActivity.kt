@@ -135,6 +135,8 @@ class MainActivity : AppCompatActivity() {
     }
     //결과 버튼 클릭 시 동작하는 메서드
     fun EqualClick(view: View){
+        // 연산자 없이 =를 누르면 아래 when의 else(나누기)로 계산되고 식에 "null"이 찍힌다
+        if (ArithOper.isNullOrEmpty()) return
         tvInput.text = ""
         if(FirstNum % 1.0 == 0.0)
             tvInput.append(FirstNum.toLong().toString() + " "+ ArithOper)
