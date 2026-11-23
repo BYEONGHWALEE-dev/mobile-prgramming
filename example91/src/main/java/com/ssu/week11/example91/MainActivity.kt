@@ -134,6 +134,8 @@ class MainActivity : AppCompatActivity() {
                     dialog.dismiss()
                     if (checked > -1 && checked < count) {
                         catsList.removeAt(checked)
+                        // 지운 위치를 그대로 두면 마지막 항목 삭제 후 수정·삭제가 범위 밖 인덱스를 읽는다.
+                        selectItemPos = -1
                         listview.clearChoices()
                         adapter.notifyDataSetChanged()
                         dialog.dismiss()
