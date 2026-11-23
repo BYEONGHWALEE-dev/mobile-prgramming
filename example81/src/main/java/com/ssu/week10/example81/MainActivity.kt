@@ -89,6 +89,9 @@ class MainActivity : AppCompatActivity() {
                         tvPizzaObj.text = listItems[selectNum]
                         oldNum = selectNum
                         tvToppingObj.text = ""
+                        // 토핑 문구를 비우는 것과 맞춰, 이전 피자에 올린 토핑 이미지도 내린다
+                        for (topping in ivToppingObj)
+                            topping?.isVisible = false
                     }
 
                     DialogInterface.BUTTON_NEGATIVE -> {
