@@ -98,7 +98,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 resultAMPM = state
                 resultTime = selHour.toString() + ":" + selMinute.toString()
-                if(resultAMPM=="AM")
+                // 고른 시각이 아니라 문제에 표시된 AM/PM 기준으로 정답을 고른다
+                if(ampm==0)
                 //선택한 시간이 정답 시간과 일치하는지 확인
                     if( resultTime.equals(timeAnswerAM[question])) {
                         ivAnswer.isVisible = true
@@ -106,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, "맞았습니다", Toast.LENGTH_LONG).show()
                     }
                     else Toast.makeText(applicationContext, "틀렸습니다", Toast.LENGTH_LONG).show()
-                else if(resultAMPM=="PM")
+                else if(ampm==1)
                 //선택한 시간이 정답 시간과 일치하는지 확인
                     if( resultTime.equals(timeAnswerPM[question])) {
                         ivAnswer.isVisible = true
